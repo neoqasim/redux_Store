@@ -6,8 +6,8 @@ const Cart = () => {
     const dispatch = useDispatch()
     const cartItems = useSelector((state) => state.cart);
 
-    const handleRemoveItem = (index) => {
-        dispatch(remove(index))
+    const handleRemoveItem = (id) => {
+        dispatch(remove(id))
     };
 
     return (
@@ -20,7 +20,7 @@ const Cart = () => {
                         <p className="text-2xl font-medium">{item.title}</p>
                         <p className="text-gray-700 text-xl font-semibold">${item.price}</p>
                         <button
-                            onClick={() => handleRemoveItem(index)}
+                            onClick={() => handleRemoveItem(item.id)}
                             className=" bg-red-500 text-white px-3 py-1 text-lg rounded hover:bg-red-600 focus:outline-none focus:bg-red-600"
                         >
                             Remove
